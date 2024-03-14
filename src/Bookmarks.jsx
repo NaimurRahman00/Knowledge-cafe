@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Bookmarks = ({bookmarks}) => {
     return (
-        <div className='bg-slate-100 rounded-xl p-7 text-left space-y-4 min-h-[58vh]'>
+        <div className='bg-slate-100 rounded-xl p-7 text-left space-y-4 min-h-[26.3rem]'>
             <h2 className="font-bold text-2xl">Bookmarked Blogs: {bookmarks.length}</h2>
             {
                 bookmarks.map((bookmark, i) => <Bookmark key={i} bookmark={bookmark}></Bookmark>)
