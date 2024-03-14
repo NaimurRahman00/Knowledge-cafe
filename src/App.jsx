@@ -15,17 +15,18 @@ function App() {
     console.log(bookmarks);
   };
 
-  const handleMarkAsRead = (time) => {
-    console.log("mark as read!");
+  const handleMarkAsRead = time => {
+    const newReadingTime = markAsRead + parseInt(time);
+    setMarkAsRead(newReadingTime);
   };
 
   return (
     <>
       <Header></Header>
       <div className="md:flex md:justify-between">
-        <Blogs handleBookmarks={handleBookmarks}></Blogs>
+        <Blogs handleBookmarks={handleBookmarks} handleMarkAsRead={handleMarkAsRead}></Blogs>
         <div className="md:w-1/3 ml-12 mt-12">
-          <ReadingTime handleMarkAsRead={handleMarkAsRead}></ReadingTime>
+          <ReadingTime markAsRead={markAsRead}></ReadingTime>
           <Bookmarks bookmarks={bookmarks}></Bookmarks>
         </div>
       </div>
