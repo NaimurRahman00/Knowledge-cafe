@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
   const {
+    id,
     title,
     cover,
     author,
@@ -27,7 +28,7 @@ const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
         </div>
         <div className="flex gap-3 items-center">
           <p>{reading_time} Min read</p>
-          <button onClick={() => handleBookmarks(blog)} className="bg-white">
+          <button onClick={() => handleBookmarks(blog)} className="bg-white text-2xl border-none px-3 py-2">
             <IoBookmarkOutline />
           </button>
         </div>
@@ -42,7 +43,7 @@ const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
       </h2>
       <div className="text-left my-3">
         <button
-          onClick={() => handleMarkAsRead(reading_time)}
+          onClick={() => handleMarkAsRead(reading_time, id)}
           className="text-white"
         >
           Mark as read
